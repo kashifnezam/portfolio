@@ -1,187 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Md Kashif Nezam | Flutter & Full Stack Developer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Md Kashif Nezam | Real-Time Systems & Flutter Developer</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f6f9;
-    color: #1f2937;
+
+:root{
+    --primary:#0f172a;
+    --secondary:#1e293b;
+    --accent:#2563eb;
+    --light:#f8fafc;
+    --text:#1e293b;
+    --muted:#64748b;
 }
 
-.hero {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-    padding: 100px 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.section-title {
-    font-weight: 600;
-    margin-bottom: 40px;
+html{
+    scroll-behavior:smooth;
 }
 
-.card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f7fb;
+    color:var(--text);
 }
 
-.btn-primary-custom {
-    background-color: #0f172a;
-    border: none;
+/* NAVBAR */
+
+.navbar{
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(8px);
 }
 
-.btn-primary-custom:hover {
-    background-color: #334155;
+.navbar-brand{
+    font-weight:700;
+    color:#fff !important;
 }
 
-.footer {
-    background-color: #0f172a;
-    color: white;
-    padding: 25px;
-    margin-top: 60px;
+.nav-link{
+    color:#dbeafe !important;
+    margin-left:15px;
+    transition:.3s;
 }
 
-a {
-    text-decoration: none;
+.nav-link:hover{
+    color:#fff !important;
 }
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(15,23,42,.88), rgba(15,23,42,.88)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:3.8rem;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero .highlight{
+    color:#60a5fa;
+}
+
+.hero p{
+    font-size:1.15rem;
+    color:#dbeafe;
+    max-width:850px;
+    margin:auto;
+}
+
+.hero-buttons .btn{
+    padding:14px 28px;
+    border-radius:12px;
+    font-weight:600;
+    margin:10px;
+}
+
+.btn-primary-custom{
+    background:var(--accent);
+    border:none;
+    color:white;
+}
+
+.btn-primary-custom:hover{
+    background:#1d4ed8;
+    color:white;
+}
+
+.btn-outline-custom{
+    border:1px solid #93c5fd;
+    color:#fff;
+}
+
+.btn-outline-custom:hover{
+    background:#fff;
+    color:var(--primary);
+}
+
+/* SECTION */
+
+.section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.3rem;
+    font-weight:800;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* STATS */
+
+.stats-card{
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:.3s;
+    height:100%;
+}
+
+.stats-card:hover{
+    transform:translateY(-6px);
+}
+
+.stats-card h3{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--accent);
+}
+
+/* WHAT I BUILD */
+
+.feature-box{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    transition:.3s;
+    height:100%;
+}
+
+.feature-box:hover{
+    transform:translateY(-5px);
+}
+
+.feature-box i{
+    font-size:2rem;
+    color:var(--accent);
+    margin-bottom:18px;
+}
+
+.feature-box h5{
+    font-weight:700;
+}
+
+/* PROJECTS */
+
+.project-card{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:.3s;
+    height:100%;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:30px;
+}
+
+.project-content h4{
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.project-content ul{
+    padding-left:18px;
+}
+
+.project-content li{
+    margin-bottom:10px;
+}
+
+/* TECH STACK */
+
+.tech-badge{
+    background:white;
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,0.05);
+    font-weight:600;
+    transition:.3s;
+}
+
+.tech-badge:hover{
+    transform:translateY(-4px);
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:4px;
+    background:#cbd5e1;
+    top:0;
+    bottom:0;
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+    position:relative;
+    width:50%;
+    padding:30px;
+}
+
+.timeline-item:nth-child(odd){
+    left:0;
+}
+
+.timeline-item:nth-child(even){
+    left:50%;
+}
+
+.timeline-content{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.timeline-content h5{
+    font-weight:800;
+}
+
+/* CONTACT */
+
+.contact-box{
+    background:linear-gradient(135deg, #0f172a, #1e293b);
+    color:white;
+    border-radius:24px;
+    padding:60px;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-weight:800;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#0f172a;
+    color:#cbd5e1;
+    text-align:center;
+    padding:28px;
+    margin-top:80px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .timeline::before{
+        left:20px;
+    }
+
+    .timeline-item{
+        width:100%;
+        padding-left:60px;
+        padding-right:20px;
+        left:0 !important;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-<section class="hero text-center">
-    <h1 class="display-5 fw-bold">Md Kashif Nezam</h1>
-    <p class="lead mt-3">
-        Flutter Developer | Full Stack Engineer | Real-Time Systems Specialist
-    </p>
-    <p class="mt-3">
-        Building scalable mobile & web applications with production-level architecture.
-    </p>
-    <a href="#contact" class="btn btn-light mt-4 px-4">Get In Touch</a>
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            Kashif Nezam
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Building
+            <span class="highlight">
+                Real-Time Tracking
+            </span>
+            & Workforce Management Systems
+        </h1>
+
+        <p class="mt-4">
+            Flutter & Full Stack Developer specializing in live location tracking,
+            field workforce management, enterprise systems, Firebase architecture,
+            REST APIs, and scalable real-time platforms.
+        </p>
+
+        <div class="hero-buttons mt-5">
+
+            <a href="#projects" class="btn btn-primary-custom">
+                View Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline-custom">
+                Hire Me
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- ABOUT -->
-<section class="container py-5">
-    <h2 class="section-title text-center">About Me</h2>
-    <p class="text-center mx-auto" style="max-width: 800px;">
-        Software Developer with 2.5+ years of experience in building scalable,
-        high-performance applications across mobile and web platforms.
-        Experienced in Flutter, Firebase, Spring Boot, REST API development,
-        and real-time location-based systems. Strong focus on clean architecture,
-        maintainability, and production deployment.
-    </p>
-</section>
 
-<!-- TECH STACK -->
-<section class="container py-5">
-    <h2 class="section-title text-center">Technical Expertise</h2>
+<section id="about" class="section">
 
-    <div class="row text-center g-4">
+    <div class="container">
 
-        <div class="col-md-3"><strong>Mobile:</strong><br>Flutter</div>
-        <div class="col-md-3"><strong>Backend:</strong><br>Spring Boot, REST APIs</div>
-        <div class="col-md-3"><strong>Database:</strong><br>Firebase, MongoDB</div>
-        <div class="col-md-3"><strong>Frontend:</strong><br>Bootstrap, JavaScript</div>
-        <div class="col-md-3"><strong>Maps & Realtime:</strong><br>Google Maps API, FlutterMap</div>
-        <div class="col-md-3"><strong>Architecture:</strong><br>Clean Architecture, MVC</div>
-        <div class="col-md-3"><strong>Tools:</strong><br>Git, Postman</div>
-        <div class="col-md-3"><strong>Deployment:</strong><br>Play Store, Web Hosting</div>
+        <div class="section-title">
+            <h2>About Me</h2>
+
+            <p>
+                Production-focused software engineer with experience building scalable mobile and web applications.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10 text-center">
+
+                <p class="fs-5 text-secondary">
+                    I specialize in developing real-time systems including GPS tracking,
+                    workforce management platforms, live location architecture,
+                    route history visualization, attendance systems, Firebase integrations,
+                    and enterprise-grade backend APIs using Flutter and Spring Boot.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="section bg-light">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3>2.5+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3>10+</h3>
+                    <p>Production Features</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3>Realtime</h3>
+                    <p>GPS Tracking Systems</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3>Cross</h3>
+                    <p>Platform Solutions</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHAT I BUILD -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Solutions I Build</h2>
+
+            <p>
+                Specialized in real-time business applications & enterprise systems.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5>Real-Time Tracking Systems</h5>
+                    <p>
+                        GPS tracking, route history, live map rendering,
+                        and movement analytics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-users"></i>
+                    <h5>Field Workforce Management</h5>
+                    <p>
+                        Attendance systems, employee monitoring,
+                        task tracking, and reporting dashboards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h5>Flutter Applications</h5>
+                    <p>
+                        Cross-platform Android & web applications
+                        with scalable architecture.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-server"></i>
+                    <h5>Backend APIs</h5>
+                    <p>
+                        Spring Boot REST APIs,
+                        Firebase architecture,
+                        and database integrations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-map"></i>
+                    <h5>Map & Route Visualization</h5>
+                    <p>
+                        Google Maps API,
+                        FlutterMap, Leaflet,
+                        and polyline rendering systems.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-comments"></i>
+                    <h5>Realtime Communication</h5>
+                    <p>
+                        Chat systems, room architecture,
+                        and synchronized real-time updates.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- PROJECTS -->
-<section class="container py-5">
-    <h2 class="section-title text-center">Selected Projects</h2>
 
-    <div class="row g-4">
+<section id="projects" class="section bg-light">
 
-        <!-- FAMILY ROOM -->
-        <div class="col-md-6">
-            <div class="card p-4">
-                <h5>Family Room – Real-Time Location Sharing Platform</h5>
+    <div class="container">
 
-                <p>
-                    A production-ready mobile application enabling families to share
-                    live location, communicate via chat, and view movement history.
-                </p>
+        <div class="section-title">
 
-                <ul>
-                    <li>Real-time tracking & polyline history rendering</li>
-                    <li>Room-based architecture with chat integration</li>
-                    <li>Firebase Authentication & Firestore database</li>
-                    <li>Deployed on Google Play Store</li>
-                </ul>
+            <h2>Featured Production Systems</h2>
 
-                <div class="mt-3">
-                    <a href="https://play.google.com/store/apps/details?id=com.kashif.family_room"
-                       target="_blank"
-                       class="btn btn-primary-custom text-white me-2">
-                        Play Store
-                    </a>
+            <p>
+                Real-world applications built for production environments.
+            </p>
 
-                    <a href="https://familyroom.in"
-                       target="_blank"
-                       class="btn btn-outline-dark">
-                        Visit Website
-                    </a>
-                </div>
-            </div>
         </div>
 
-        <!-- INSIGHTGEEKS -->
-        <div class="col-md-6">
-            <div class="card p-4">
-                <h5>Enterprise Web Application – InsightGeeks Pvt Ltd</h5>
+        <div class="row g-4">
 
-                <p>
-                    Full Stack enterprise system with backend APIs and map-based
-                    tracking solutions.
-                </p>
+            <!-- FAMILY ROOM -->
 
-                <ul>
-                    <li>Developed scalable Spring Boot REST APIs</li>
-                    <li>Integrated Google Maps for live tracking</li>
-                    <li>Built responsive UI using Bootstrap</li>
-                    <li>Handled database operations & production issue resolution</li>
-                </ul>
+            <div class="col-lg-6">
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop">
+                    </div>
+
+                    <div class="project-content">
+
+                        <h4>
+                            Family Room – Real-Time Tracking Platform
+                        </h4>
+
+                        <p>
+                            Production-ready platform enabling live GPS tracking,
+                            movement history visualization, chat integration,
+                            room-based architecture, and real-time monitoring systems.
+                        </p>
+
+                        <ul>
+                            <li>Live location tracking & polyline history</li>
+                            <li>Real-time Firebase architecture</li>
+                            <li>Room/group management system</li>
+                            <li>Chat integration with live map overlay</li>
+                            <li>3-day movement history visualization</li>
+                            <li>Google Maps & FlutterMap integration</li>
+                            <li>Production deployment on Play Store</li>
+                        </ul>
+
+                        <div class="mt-4">
+
+                            <a href="https://play.google.com/store/apps/details?id=com.kashif.family_room"
+                               target="_blank"
+                               class="btn btn-primary-custom me-2">
+                                Play Store
+                            </a>
+
+                            <a href="https://familyroom.in"
+                               target="_blank"
+                               class="btn btn-outline-dark">
+                                Live Website
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
+            <!-- ENTERPRISE -->
+
+            <div class="col-lg-6">
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+                    </div>
+
+                    <div class="project-content">
+
+                        <h4>
+                            Enterprise Workforce Management System
+                        </h4>
+
+                        <p>
+                            Enterprise-grade workforce and field management system
+                            built with scalable backend architecture and real-time tracking.
+                        </p>
+
+                        <ul>
+                            <li>Spring Boot REST API development</li>
+                            <li>Manager field tracking systems</li>
+                            <li>Attendance & reporting dashboards</li>
+                            <li>Google Maps live tracking integration</li>
+                            <li>Advanced DataTables optimization</li>
+                            <li>Production issue resolution & deployments</li>
+                            <li>Responsive Bootstrap-based UI systems</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
+
+</section>
+
+<!-- TECH STACK -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Technical Expertise</h2>
+
+            <p>
+                Technologies & tools used in production systems.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Flutter
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Spring Boot
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Firebase
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    MongoDB
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Google Maps API
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    FlutterMap & Leaflet
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Bootstrap & JavaScript
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="tech-badge">
+                    Git & Postman
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="section bg-light">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Professional Experience</h2>
+
+            <p>
+                Enterprise development & production system engineering.
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <h5>Full Stack Developer</h5>
+
+                    <h6 class="text-primary">
+                        InsightGeeks Pvt Ltd
+                    </h6>
+
+                    <p class="text-muted">
+                        2023 – Present
+                    </p>
+
+                    <ul>
+                        <li>Developed enterprise workforce management systems</li>
+                        <li>Built scalable REST APIs using Spring Boot</li>
+                        <li>Implemented live location tracking architecture</li>
+                        <li>Worked on production deployments & issue resolution</li>
+                        <li>Developed responsive dashboards & reporting systems</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="container py-5 text-center">
-    <h2 class="section-title">Contact</h2>
 
-    <p><strong>Email:</strong> kashifnezam123@gmail.com</p>
+<section id="contact" class="section">
 
-    <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/kashifnezam" target="_blank">
-            github.com/kashifnezam
-        </a>
-    </p>
+    <div class="container">
 
-    <p>
-        <strong>Website:</strong>
-        <a href="https://familyroom.in" target="_blank">
-            familyroom.in
-        </a>
-    </p>
+        <div class="contact-box">
+
+            <h2>Let's Build Something Great</h2>
+
+            <p class="mt-3">
+                Available for freelance projects, business solutions,
+                Flutter applications, and real-time tracking systems.
+            </p>
+
+            <div class="mt-5">
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    &nbsp;
+                    kashifnezam123@gmail.com
+                </p>
+
+                <p>
+                    <i class="fa-brands fa-github"></i>
+                    &nbsp;
+                    github.com/kashifnezam
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-globe"></i>
+                    &nbsp;
+                    familyroom.in
+                </p>
+
+            </div>
+
+            <div class="mt-4">
+
+                <a href="mailto:kashifnezam123@gmail.com"
+                   class="btn btn-primary-custom">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- FOOTER -->
-<div class="footer text-center">
-    © 2026 Md Kashif Nezam | Flutter & Full Stack Developer
-</div>
+
+<footer class="footer">
+
+    © 2026 Md Kashif Nezam —
+    Real-Time Systems & Flutter Developer
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
